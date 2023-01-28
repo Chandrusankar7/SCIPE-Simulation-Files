@@ -1,0 +1,15 @@
+*NAND gate
+.MODEL PCH PMOS LEVEL=54
+MPA D A DD DD PCH L=90n W=190n
+MPB op B DD DD PCH L=90n W=190n
+MNA op A 0 0 NCH L=90n W=190n
+MNB op B 0 0 NCH L=90n W=190n
+
+vdd DD 0 5
+va A 0 5
+vb b 0 2
+
+.DC vb 0 5 0.01
+.plot DC V(A) V(B) V(op)
+.option post
+.end

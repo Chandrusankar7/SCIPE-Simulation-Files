@@ -1,0 +1,20 @@
+*CMOS Characteristics
+.MODEL PCH PMOS LEVEL=54
+.MODEL NCH NMOS LEVEL=54
+MPA op A DD DD PCH L=L W=W
+MNA op A 0 0 NCH L=L W=W
+
+vdd DD 0 3
+va A 0 3
+
+.DATA d1
+L	W
+90n 	225n
+100n	250n
+120n	280n
+.ENDDATA
+
+.DC va 0 3 0.01 SWEEP DATA=d1
+.plot DC V(A) V(op)
+.option post
+.end
