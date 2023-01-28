@@ -1,0 +1,12 @@
+*PMOS VDD sweep
+.MODEL PCH PMOS LEVEL=54
+M1 d g s b PCH L=90n W=190n
+R d 0 1K
+vsd s d DC 3
+vsg s g DC 3
+vsb s b DC 3
+
+.DC vsb 0 -5 -0.01
+.plot DC lx4(M1)
+.option post
+.end
